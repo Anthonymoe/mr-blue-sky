@@ -5,10 +5,18 @@ import {useSelector} from 'react-redux';
 function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
+  
   return (
     <div className="container">
-      <h2>Welcome, {user.username}!</h2>
+      {/* leaving user.username and user.id here for reference for now */}
+      <h2>Welcome, {user.username}</h2>
       <p>Your ID is: {user.id}</p>
+      <p>will remove username and id before completetion</p>
+      {/* end of reference delete at end of project */}
+      <h1>Where to?</h1>
+      <button className="btn">New Entry</button>
+      <button className="btn">Insights</button>
+      <button className="btn">History</button>
       <LogOutButton className="btn" />
     </div>
   );
