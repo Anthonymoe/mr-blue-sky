@@ -19,14 +19,16 @@ function MoodPage() {
         setMood( Number(event.target.value) )
         console.log(mood);
     }
+    
     //brings user back to homepage
     const cancel = () => {
         history.push('/')
     }
+    
     //dispatches mood to store.
     const newMood = () => {
         dispatch({ type: 'SET_MOOD', payload: mood })
-        // history.push('/entry2')
+        history.push('/comment')
     }
 
 
@@ -43,7 +45,7 @@ function MoodPage() {
                 <button value='5'>5</button>
             </form>
             <div>
-                <p>{JSON.stringify(test.mood)}</p>
+                <p>{JSON.stringify(test)}</p>
                 <button onClick={cancel}>Cancel</button>
                 <button onClick={newMood}>Next</button>
             </div>

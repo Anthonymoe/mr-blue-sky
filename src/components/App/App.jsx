@@ -20,6 +20,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import MoodPage from '../MoodPage/MoodPage'
+import CommentPage from '../CommentPage/CommentPage';
 
 import './App.css';
 
@@ -64,6 +65,13 @@ function App() {
             path="/mood"
           >
             <MoodPage />
+          </ProtectedRoute>  
+
+          <ProtectedRoute
+            exact
+            path="/comment"
+          >
+            <CommentPage />
           </ProtectedRoute>  
 
           <ProtectedRoute
