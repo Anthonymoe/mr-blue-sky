@@ -9,7 +9,7 @@ function UserPage() {
   const history = useHistory();
 
   const goToEntry = () => {
-    history.push('/entry')
+    history.push('/mood')
   }
 
   return (

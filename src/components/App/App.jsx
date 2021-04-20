@@ -19,7 +19,7 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-import EntryPageOne from '../EntryPageOne/EntryPageOne'
+import MoodPage from '../MoodPage/MoodPage'
 
 import './App.css';
 
@@ -61,9 +61,9 @@ function App() {
 
           <ProtectedRoute
             exact
-            path="/entry"
+            path="/mood"
           >
-            <EntryPageOne />
+            <MoodPage />
           </ProtectedRoute>  
 
           <ProtectedRoute
