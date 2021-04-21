@@ -8,19 +8,21 @@ function ReviewPage() {
         return store;
     })
 
-    const backClick = {
+    let backClick = () => {
         history.push('/comment')
     }
 
     return(
         <>
-        <h1>Review your entry</h1>
-        <p>{review.mood}</p>
-        <p>{review.comment}</p>
-        <button>Back</button>
-        <button>Confirm</button>
+            <h1>Review your entry</h1>
+            <p>{review.mood}</p>
+            <p>{review.comment}</p>
+            <button onClick={backClick}>Back</button>
+            <button>Confirm</button>
         </>
 
     )
 
 }
+
+export default ReviewPage;

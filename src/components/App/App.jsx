@@ -21,6 +21,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import MoodPage from '../MoodPage/MoodPage'
 import CommentPage from '../CommentPage/CommentPage';
+import ReviewPage from '../ReviewPage/ReviewPage';
 
 import './App.css';
 
@@ -73,6 +74,13 @@ function App() {
           >
             <CommentPage />
           </ProtectedRoute>  
+
+          <ProtectedRoute
+            exact
+            path="/review"
+          >
+            <ReviewPage />
+          </ProtectedRoute> 
 
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage

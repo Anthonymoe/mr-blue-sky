@@ -20,14 +20,16 @@ function CommentPage() {
 
     //dispatches comment to comment reducer ---> then to store as "comment"
     let submitEntry = () => {
-        console.log(comment);
-        dispatch({type: 'SET_COMMENT', payload: comment })
+        console.log('in submit entry', comment);
+        dispatch({type: 'SET_COMMENT', payload: comment });
+        history.push('/review');
     }
 
     //brings user to the previous page which is mood.
     let backClick = () => {
-        history.push('/mood')
+        history.push('/mood');
     }
+
     
 
     return(
