@@ -1,6 +1,17 @@
-import { put, takeEvery } from 'redux-saga/effects';
+import { put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
-function* userSaga() {
-    yield takeEvery('ADD_ENTRY', addNewEntry);
+//this is the watcher saga waiting for any action types that match 'ADD_ENTRY'
+function* entrySaga() {
+    yield takeLatest('ADD_ENTRY', addNewEntry);
   }
+
+  function* addNewEntry (action) {
+    try {
+        yield axios.post('/api/entry', action.payload )
+    }catch {
+        console.log( 'in addNewEntry' )
+    }
+}
+
+export default entrySaga;

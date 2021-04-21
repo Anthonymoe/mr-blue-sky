@@ -20,8 +20,9 @@ function ReviewPage() {
     }
 
     let submitEntry = () => {
-        // dispatch({type: 'ADD_ENTRY', payload: newEntry })
+        dispatch({type: 'ADD_ENTRY', payload: newEntry })
         console.log('in submit Entry:', newEntry );
+        //////// need to add route back to home page //////////
     }
 
     return(
