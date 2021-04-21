@@ -15,8 +15,9 @@ function ReviewPage() {
     return(
         <>
             <h1>Review your entry</h1>
-            <p>{review.mood}</p>
-            <p>{review.comment}</p>
+            <p>Current mood:{review.mood}</p>
+            <p>Current comment:{review.comment}</p>
+            <p>User Id:{review.user.id}</p>
             <button onClick={backClick}>Back</button>
             <button>Confirm</button>
         </>
