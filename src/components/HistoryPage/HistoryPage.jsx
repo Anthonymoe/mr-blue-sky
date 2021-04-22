@@ -1,6 +1,6 @@
 import {useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import './HistoryPage.css'
 
 <HistoryPage className="css"></HistoryPage>
@@ -12,10 +12,17 @@ function HistoryPage() {
     const current = useSelector( (store) =>{
         return store;
     })
+    const entryHistory = useSelector( (store) =>{
+        return store.history;
+    })
 
     useEffect(() =>{
         dispatch({type: 'FETCH_HISTORY', payload: current.user.id });
     }, []);
+
+    const handleClick = (entry) => {
+        console.log('in view/edit/delete click:', entry.id);
+    }
 
     return(
         <>
@@ -30,7 +37,17 @@ function HistoryPage() {
                     <td>3</td>
                     <td><button>Go!</button></td>
                 </tr>
+                {entryHistory.map(entry => {
+                    return (
+                        <tr key={entry.id}>
+                            <td>date</td>
+                            <td>{entry.mood}</td>
+                            <td><button onClick={()=>handleClick(entry)} key={entry.id}>Go!</button></td>
+                        </tr>
+                    )
+                })}
             </table>
+            <p>{JSON.stringify(current)}</p>
         </>
     )
 }
