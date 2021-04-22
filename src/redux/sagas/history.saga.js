@@ -6,6 +6,7 @@ function* historySaga() {
     yield takeLatest('FETCH_HISTORY', fetchHistory );
   }
 
+//function gets entry data specific to user ---> data in store under history. 
 function* fetchHistory (action) {
     try {
         const userHistory = yield axios.get('/api/entry/' + action.payload)
