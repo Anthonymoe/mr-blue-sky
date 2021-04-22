@@ -2,6 +2,7 @@ import {useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 
 function ReviewPage() {
+    //renaming function to make them easier to call
     const history = useHistory();
     const dispatch = useDispatch();
     const currentEntry = useSelector( (store) =>{
@@ -14,15 +15,15 @@ function ReviewPage() {
         mood: currentEntry.mood,
         comment: currentEntry.comment
     }
-
+    //brings user back to comment page
     let backClick = () => {
         history.push('/comment')
     }
-
+    //submits entry to the db and brings the user back to the home page after complete.
     let submitEntry = () => {
         dispatch({type: 'ADD_ENTRY', payload: newEntry })
         console.log('in submit Entry:', newEntry );
-        //////// need to add route back to home page //////////
+        history.push('/')
     }
 
     return(

@@ -22,8 +22,10 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import MoodPage from '../MoodPage/MoodPage'
 import CommentPage from '../CommentPage/CommentPage';
 import ReviewPage from '../ReviewPage/ReviewPage';
+import HistoryPage from '../HistoryPage/HistoryPage';
 
 import './App.css';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -81,6 +83,14 @@ function App() {
           >
             <ReviewPage />
           </ProtectedRoute> 
+
+          <ProtectedRoute
+            exact
+            path="/history"
+          >
+            <HistoryPage/>
+          </ProtectedRoute> 
+
 
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage

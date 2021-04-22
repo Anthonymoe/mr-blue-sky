@@ -12,6 +12,10 @@ function UserPage() {
     history.push('/mood')
   }
 
+  const goToHistory = () => {
+    history.push('/history')
+  }
+
   return (
     <div className="container">
       {/* leaving user.username and user.id here for reference for now */}
@@ -22,7 +26,7 @@ function UserPage() {
       <h1>Where to?</h1>
       <button onClick={goToEntry} className="btn">New Entry</button>
       <button className="btn">Insights</button>
-      <button className="btn">History</button>
+      <button onClick={goToHistory} className="btn">History</button>
       <LogOutButton className="btn" />
     </div>
   );

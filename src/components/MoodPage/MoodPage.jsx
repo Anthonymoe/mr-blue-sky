@@ -28,6 +28,7 @@ function MoodPage() {
     //dispatches mood to store.
     const newMood = () => {
         dispatch({ type: 'SET_MOOD', payload: mood })
+        setMood(0);
         history.push('/comment')
     }
 

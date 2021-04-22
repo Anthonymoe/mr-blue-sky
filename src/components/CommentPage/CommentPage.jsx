@@ -22,6 +22,7 @@ function CommentPage() {
     let submitEntry = () => {
         console.log('in submit entry', comment);
         dispatch({type: 'SET_COMMENT', payload: comment });
+        setComment('');
         history.push('/review');
     }
 

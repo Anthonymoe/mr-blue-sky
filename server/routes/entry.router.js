@@ -5,9 +5,19 @@ const router = express.Router();
 /**
  * GET route template
  */
-router.get('/', (req, res) => {
-  // GET route code here
-});
+router.get('/:id', (req, res) => {
+  console.log('in entry get', req.params.id);
+  const query = `SELECT * FROM "entry"
+  WHERE "user_id" = $1`;
+  pool.query(query, [req.params.id])
+    .then( result => {
+      res.send(result.rows);
+    })
+    .catch(err => {
+      console.log('ERROR: Get user history', err);
+      res.sendStatus(500)
+    })
+  });
 
 /**
  * POST route template
