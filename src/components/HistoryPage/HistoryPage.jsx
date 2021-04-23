@@ -9,17 +9,21 @@ function HistoryPage() {
     //renaming functions to make easier to call
     const history = useHistory();
     const dispatch = useDispatch();
+    
+    //two seperate variables for useSelector to bring in data from the store
     const current = useSelector( (store) =>{
         return store;
     })
     const entryHistory = useSelector( (store) =>{
         return store.history;
     })
-
+    
+    //gathers users entry history and renders to DOM -> follow to historySaga
     useEffect(() =>{
         dispatch({type: 'FETCH_HISTORY', payload: current.user.id });
     }, []);
 
+    //gathers selected entry data from db and stores it as selectedEntry in store -> follow to selectedEntrySaga
     const handleClick = (entry) => {
         console.log('in view/edit/delete click:', entry.id);
         dispatch({type: 'FETCH_ENTRY', payload: entry.id });

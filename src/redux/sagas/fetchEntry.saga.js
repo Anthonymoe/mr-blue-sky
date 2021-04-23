@@ -1,12 +1,12 @@
 import { put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
-//this is the watcher saga waiting for any action types that match 'ADD_ENTRY'
+//this is the watcher saga waiting for any action types that match 'FETCH_ENTRY'
 function* fetchEntrySaga() {
     yield takeLatest('FETCH_ENTRY', fetchEntry );
   }
 
-//function gets entry data specific to user ---> data in store under history. 
+//function gets entry data specific to selected entry from history table -> data in store under selectedEntry. 
 function* fetchEntry (action) {
     try {
         const selectedEntry = yield axios.get(`/api/entry/?entryId=${action.payload}`)
