@@ -1,4 +1,4 @@
-import { put, takeLatest } from 'redux-saga/effects';
+import { takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
 //this is the watcher saga waiting for any action types that match 'ADD_ENTRY'

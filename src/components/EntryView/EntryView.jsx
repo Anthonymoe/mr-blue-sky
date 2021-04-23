@@ -25,7 +25,7 @@ function EntryView() {
     }
 
     const deleteClick = () => {
-        // dispatch({type: 'DELETE_ENTRY', payload: entryInfo.id })
+        dispatch({type: 'DELETE_ENTRY', payload: entryInfo[0].id })
         console.log( 'delete click entry id:', entryInfo[0].id );
     }
 
