@@ -22,6 +22,8 @@ function HistoryPage() {
 
     const handleClick = (entry) => {
         console.log('in view/edit/delete click:', entry.id);
+        dispatch({type: 'FETCH_ENTRY', payload: entry.id });
+        history.push('/entry')
     }
 
     return(

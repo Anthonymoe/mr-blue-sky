@@ -19,6 +19,24 @@ router.get('/:id', (req, res) => {
     })
   });
 
+  router.get('/', (req, res) => {
+    const queryId = Number(req.query.entryId);
+    console.log(queryId);
+    console.log('in selectedEntry get', req.query.entryId);
+    const queryString = `SELECT * FROM "entry"
+    WHERE "id" = $1`;
+    pool.query(queryString, [req.query.entryId])
+      .then( result => {
+        console.log(result.rows);
+        res.send(result.rows);
+      })
+      .catch(err => {
+        console.log('ERROR: Get selectedEntry', err);
+        res.sendStatus(500)
+      })
+    });
+
+
 /**
  * POST route template
  */

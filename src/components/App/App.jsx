@@ -23,6 +23,7 @@ import MoodPage from '../MoodPage/MoodPage'
 import CommentPage from '../CommentPage/CommentPage';
 import ReviewPage from '../ReviewPage/ReviewPage';
 import HistoryPage from '../HistoryPage/HistoryPage';
+import EntryView from '../EntryView/EntryView';
 
 import './App.css';
 
@@ -89,6 +90,13 @@ function App() {
             path="/history"
           >
             <HistoryPage/>
+          </ProtectedRoute> 
+
+          <ProtectedRoute
+            exact
+            path="/entry"
+          >
+            <EntryView/>
           </ProtectedRoute> 
 
 
