@@ -11,7 +11,15 @@ function EntryView() {
 
     return(
         <>
-            <p>{JSON.stringify(entryInfo)}</p>
+            {entryInfo.map(entry => {
+                    return (
+                        <div key={entry.id}>
+                            <p>date</p>
+                            <p>{entry.mood}</p>
+                            <p>{entry.comment}</p>
+                        </div>
+                    )
+                })}
         </>
     )
 }
