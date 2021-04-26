@@ -46,7 +46,8 @@ function EntryView() {
     }
 
     const displayComment = () => {
-        let display = <textarea name="" id="" cols="30" rows="10">{entryInfo[0].comment}</textarea>;
+        let display = <div><textarea name="" id="" cols="30" rows="10">{entryInfo[0].comment}</textarea> 
+            <button>Submit</button> <button onClick={toggleEdit}>Cancel</button></div>;
         if (edit) {
             display = <p>{entryInfo[0].comment}</p>;
         }
