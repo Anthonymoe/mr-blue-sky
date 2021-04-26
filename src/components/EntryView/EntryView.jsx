@@ -35,12 +35,12 @@ function EntryView() {
 
     //updates entry in db 
     const updateEntry = () => {
-        // dispatch({type: 'UPDATE_ENTRY', payload: entryUpdate });
+        dispatch({type: 'UPDATE_ENTRY', payload: entryUpdate });
         console.log('update entry, sending:', entryUpdate );
     }
 
     //used to hold any updates the user makes to the comment prior to moving to db
-    const [commentUpdate, setCommentUpdate] = useState(entryInfo[0].comment);
+    const [commentUpdate, setCommentUpdate] = useState('');
 
     //changes the value of commentUpdate
     const updateComment = (event) => {
@@ -50,7 +50,7 @@ function EntryView() {
    
     //object to hold updates(this will be the payload in updateEntry)
     const entryUpdate ={
-        id: entryId[0].id,
+        id: entryInfo[0].id,
         comment: commentUpdate
     }
 

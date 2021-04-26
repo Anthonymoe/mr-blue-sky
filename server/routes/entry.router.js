@@ -71,4 +71,21 @@ router.delete('/:id', (req, res) => {
     })
   });
 
+  router.put('/', (req, res) => {
+    console.log('in entry update put route', req.body);
+    const query = `UPDATE "entry"
+    SET "comment" = $1
+    WHERE "id" = $2;`;
+    pool.query(query, [req.body.comment, req.body.id] )
+      .then( result => {
+        console.log( 'you have successfuly updated the entry');
+        res.sendStatus(200)
+      })
+      .catch(error => {
+        console.log('ERROR: could not update entry', error);
+        res.sendStatus(500)
+      })
+    });
+
+
 module.exports = router;
