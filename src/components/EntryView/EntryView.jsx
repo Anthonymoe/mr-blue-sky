@@ -1,7 +1,7 @@
 import {useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import React, { useEffect, useState } from 'react';
-import TextEdit from '../TextEdit/TextEdit'
+
 
 
 function EntryView() {
@@ -34,35 +34,36 @@ function EntryView() {
     }
 
     //updates entry in db 
-    const updateEntry = () => {
+    const updateEntry = (id) => {
+         //Object to send for update to db
+        const entryUpdate ={
+        id: id,
+        comment: commentUpdate
+        }
         dispatch({type: 'UPDATE_ENTRY', payload: entryUpdate });
         console.log('update entry, sending:', entryUpdate );
+        
     }
 
+    
     //used to hold any updates the user makes to the comment prior to moving to db
-    const [commentUpdate, setCommentUpdate] = useState('');
+    const [commentUpdate, setCommentUpdate] = useState('');/////doesnt like when I try to use store to set this value it is always one entry behind.
+    ////need to find a way to either prevent user from submitting with a condition or getting useState set to appropriate comment prior to on change action.
+
 
     //changes the value of commentUpdate
     const updateComment = (event) => {
         setCommentUpdate(event.target.value);
-        console.log(commentUpdate);
+        console.log('this is comment update line 64:', commentUpdate );
     }
    
-    //object to hold updates(this will be the payload in updateEntry)
-    const entryUpdate ={
-        id: entryInfo[0].id,
-        comment: commentUpdate
-    }
+    
 
     // this is used to toggle the state of edit to determine if the comment or edit box should be rendered to the DOM
     const [edit, setEdit] = useState(true);
     const toggleEdit = () => {
-        if( edit ){
-            setEdit(false);
-        }
-        else{
-            setEdit(true);
-        }
+        setEdit(!edit);
+        setCommentUpdate(entryInfo[0].comment);
         console.log(edit);
         return edit;
     }
@@ -70,7 +71,7 @@ function EntryView() {
     //on the click of edit this toggles the comment to a text box with a submit and cancel button
     const displayComment = () => {
         let display = <div><textarea onChange={updateComment} name="" id="" cols="30" rows="10">{entryInfo[0].comment}</textarea> 
-            <button onClick={updateEntry}>Submit</button> <button onClick={toggleEdit}>Cancel</button></div>;
+            <button onClick={()=>updateEntry(entryInfo[0].id)}>Submit</button> <button onClick={toggleEdit}>Cancel</button></div>;
         if (edit) {
             display = <p>{entryInfo[0].comment}</p>;
         }
