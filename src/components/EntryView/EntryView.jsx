@@ -13,7 +13,7 @@ function EntryView() {
         return store.currentEntry;
     });
     const entryId = useSelector( (store) => {
-        return store.currentEntry.id
+        return store.currentEntry;
     })
 
     //sends user back to home page
@@ -26,14 +26,36 @@ function EntryView() {
         history.push('/history');
     }
 
+    //removes entire entry from db onClick of the delete button
     const deleteClick = () => {
         dispatch({type: 'DELETE_ENTRY', payload: entryInfo[0].id });
         console.log( 'delete click entry id:', entryInfo[0].id );
         history.push('/')
     }
 
+    //updates entry in db 
+    const updateEntry = () => {
+        // dispatch({type: 'UPDATE_ENTRY', payload: entryUpdate });
+        console.log('update entry, sending:', entryUpdate );
+    }
+
+    //used to hold any updates the user makes to the comment prior to moving to db
+    const [commentUpdate, setCommentUpdate] = useState(entryInfo[0].comment);
+
+    //changes the value of commentUpdate
+    const updateComment = (event) => {
+        setCommentUpdate(event.target.value);
+        console.log(commentUpdate);
+    }
+   
+    //object to hold updates(this will be the payload in updateEntry)
+    const entryUpdate ={
+        id: entryId[0].id,
+        comment: commentUpdate
+    }
+
+    // this is used to toggle the state of edit to determine if the comment or edit box should be rendered to the DOM
     const [edit, setEdit] = useState(true);
-    
     const toggleEdit = () => {
         if( edit ){
             setEdit(false);
@@ -45,9 +67,10 @@ function EntryView() {
         return edit;
     }
 
+    //on the click of edit this toggles the comment to a text box with a submit and cancel button
     const displayComment = () => {
-        let display = <div><textarea name="" id="" cols="30" rows="10">{entryInfo[0].comment}</textarea> 
-            <button>Submit</button> <button onClick={toggleEdit}>Cancel</button></div>;
+        let display = <div><textarea onChange={updateComment} name="" id="" cols="30" rows="10">{entryInfo[0].comment}</textarea> 
+            <button onClick={updateEntry}>Submit</button> <button onClick={toggleEdit}>Cancel</button></div>;
         if (edit) {
             display = <p>{entryInfo[0].comment}</p>;
         }
@@ -63,7 +86,6 @@ function EntryView() {
                             <p>Mood Rating: <span>{entry.mood}</span></p>
                             <p>Comments:</p>
                             {displayComment()}
-                            <p>{JSON.stringify(entryId)}</p>
                         </div>
                         
                     )
