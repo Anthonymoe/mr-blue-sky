@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
+const moment = require("moment");
 
 function MoodPage() {
     //renaming functions to make easier to call
@@ -28,6 +29,7 @@ function MoodPage() {
     //dispatches mood to store.
     const newMood = () => {
         dispatch({ type: 'SET_MOOD', payload: mood })
+        dispatch({ type: 'SET_DATE', payload: moment().format("MM/DD/YY") })
         setMood(0);
         history.push('/weather')
     }

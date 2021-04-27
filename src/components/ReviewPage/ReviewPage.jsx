@@ -1,6 +1,7 @@
 import {useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 
+
 function ReviewPage() {
     //renaming function to make them easier to call
     const history = useHistory();
@@ -14,7 +15,8 @@ function ReviewPage() {
         user_id: currentEntry.user.id,
         mood: currentEntry.mood,
         comment: currentEntry.comment,
-        weather: currentEntry.weather
+        weather: currentEntry.weather,
+        date: currentEntry.date
     }
     //brings user back to comment page
     let backClick = () => {

@@ -6,6 +6,7 @@ import comment from './comment.reducer';
 import history from './history.reducer';
 import currentEntry from './fetchEntry.reducer';
 import weather from './weather.reducer';
+import date from './date.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   mood,
   weather,
   comment,
+  date,
   history,
   currentEntry,
 });
