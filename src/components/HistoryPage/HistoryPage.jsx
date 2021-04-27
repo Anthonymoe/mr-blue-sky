@@ -46,7 +46,7 @@ function HistoryPage() {
                 {entryHistory.map(entry => {
                     return (
                         <tr key={entry.id}>
-                            <td>date</td>
+                            <td>{entry.date}</td>
                             <td>{entry.mood}</td>
                             <td><button onClick={()=>handleClick(entry)} key={entry.id}>Go!</button></td>
                         </tr>

@@ -78,7 +78,7 @@ function EntryView() {
             {entryInfo.map(entry => {
                     return (
                         <div key={entry.id}>
-                            <p>Date: <span>date will go here</span></p>
+                            <p>Date: <span>{entry.date}</span></p>
                             <p>Mood Rating: <span>{entry.mood}</span></p>
                             <p>Comments:</p>
                             {displayComment()}
