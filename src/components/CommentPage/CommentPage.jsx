@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
+const moment = require("moment");
 
 function CommentPage() {
     //renaming functions to make easier to call

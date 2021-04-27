@@ -41,20 +41,15 @@ function EntryView() {
         comment: commentUpdate
         }
         dispatch({type: 'UPDATE_ENTRY', payload: entryUpdate });
-        console.log('update entry, sending:', entryUpdate );
-        
     }
 
     
     //used to hold any updates the user makes to the comment prior to moving to db
-    const [commentUpdate, setCommentUpdate] = useState('');/////doesnt like when I try to use store to set this value it is always one entry behind.
-    ////need to find a way to either prevent user from submitting with a condition or getting useState set to appropriate comment prior to on change action.
-
+    const [commentUpdate, setCommentUpdate] = useState('');
 
     //changes the value of commentUpdate
     const updateComment = (event) => {
         setCommentUpdate(event.target.value);
-        console.log('this is comment update line 64:', commentUpdate );
     }
    
     
@@ -64,7 +59,6 @@ function EntryView() {
     const toggleEdit = () => {
         setEdit(!edit);
         setCommentUpdate(entryInfo[0].comment);
-        console.log(edit);
         return edit;
     }
 
