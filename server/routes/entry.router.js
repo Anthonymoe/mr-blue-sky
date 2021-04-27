@@ -42,11 +42,11 @@ router.post('/', (req, res) => {
   console.log('in entry.router sending:', req.body );
   //naming query to make it easier to reference
   const insertEntryQuery = ` 
-  INSERT INTO "entry" ( "user_id", "mood", "comment" )
-  VALUES ( $1, $2, $3 )`;
+  INSERT INTO "entry" ( "user_id", "mood", "weather", "comment" )
+  VALUES ( $1, $2, $3, $4 )`;
 
   //This query will add the entry object to the entry table
-  pool.query(insertEntryQuery, [req.body.user_id, req.body.mood, req.body.comment])
+  pool.query(insertEntryQuery, [req.body.user_id, req.body.mood, req.body.weather, req.body.comment])
   .then( (results) => {
       res.sendStatus( 200 );
   }).catch( (err) => {
@@ -71,6 +71,8 @@ router.delete('/:id', (req, res) => {
     })
   });
 
+
+  //this route makes edits made to the selected entry
   router.put('/', (req, res) => {
     console.log('in entry update put route', req.body);
     const query = `UPDATE "entry"

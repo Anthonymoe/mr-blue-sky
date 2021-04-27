@@ -4,7 +4,8 @@ import user from './user.reducer';
 import mood from './mood.reducer';
 import comment from './comment.reducer';
 import history from './history.reducer';
-import currentEntry from './fetchEntry.reducer'
+import currentEntry from './fetchEntry.reducer';
+import weather from './weather.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
   errors, // contains registrationMessage and loginMessage
   user, // will have an id and username if someone is logged in
   mood,
+  weather,
   comment,
   history,
   currentEntry,

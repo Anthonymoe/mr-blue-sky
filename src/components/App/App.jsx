@@ -24,6 +24,7 @@ import CommentPage from '../CommentPage/CommentPage';
 import ReviewPage from '../ReviewPage/ReviewPage';
 import HistoryPage from '../HistoryPage/HistoryPage';
 import EntryView from '../EntryView/EntryView';
+import WeatherPage from '../WeatherPage/WeatherPage';
 
 import './App.css';
 
@@ -70,6 +71,13 @@ function App() {
           >
             <MoodPage />
           </ProtectedRoute>  
+
+          <ProtectedRoute
+            exact
+            path="/weather"
+          >
+            <WeatherPage />
+          </ProtectedRoute> 
 
           <ProtectedRoute
             exact

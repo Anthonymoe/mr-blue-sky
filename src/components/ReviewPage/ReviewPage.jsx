@@ -13,7 +13,8 @@ function ReviewPage() {
     const newEntry = {
         user_id: currentEntry.user.id,
         mood: currentEntry.mood,
-        comment: currentEntry.comment
+        comment: currentEntry.comment,
+        weather: currentEntry.weather
     }
     //brings user back to comment page
     let backClick = () => {
@@ -30,6 +31,7 @@ function ReviewPage() {
         <>
             <h1>Review your entry</h1>
             <p>Current mood:{currentEntry.mood}</p>
+            <p>Current weather:{currentEntry.weather}</p>
             <p>Current comment:{currentEntry.comment}</p>
             <p>User Id:{currentEntry.user.id}</p>
             <button onClick={backClick}>Back</button>

@@ -46,6 +46,7 @@ function EntryView() {
     
     //used to hold any updates the user makes to the comment prior to moving to db
     const [commentUpdate, setCommentUpdate] = useState('');
+   
 
     //changes the value of commentUpdate
     const updateComment = (event) => {
