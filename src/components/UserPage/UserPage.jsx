@@ -16,6 +16,10 @@ function UserPage() {
     history.push('/history')
   }
 
+  const goToInsights = () => {
+    history.push('/insights')
+  }
+
   return (
     <div className="container">
       {/* leaving user.username and user.id here for reference for now */}
@@ -25,7 +29,7 @@ function UserPage() {
       {/* end of reference delete at end of project */}
       <h1>Where to?</h1>
       <button onClick={goToEntry} className="btn">New Entry</button>
-      <button className="btn">Insights</button>
+      <button onClick={goToInsights} className="btn">Insights</button>
       <button onClick={goToHistory} className="btn">History</button>
       <LogOutButton className="btn" />
     </div>

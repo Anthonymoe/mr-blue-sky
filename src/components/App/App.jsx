@@ -25,6 +25,7 @@ import ReviewPage from '../ReviewPage/ReviewPage';
 import HistoryPage from '../HistoryPage/HistoryPage';
 import EntryView from '../EntryView/EntryView';
 import WeatherPage from '../WeatherPage/WeatherPage';
+import Insights from '../Insights/Insights';
 
 import './App.css';
 
@@ -97,8 +98,16 @@ function App() {
             exact
             path="/history"
           >
-            <HistoryPage/>
+            <HistoryPage />
           </ProtectedRoute> 
+
+          <ProtectedRoute
+            exact
+            path="/insights"
+          >
+            <Insights />
+          </ProtectedRoute> 
+
 
           <ProtectedRoute
             exact
