@@ -8,35 +8,35 @@ const data = {
       label: 'Weather',
       data: [1, 3, 4, 2, 5, 3],
       fill: false,
-      backgroundColor: 'rgb(245, 237, 19)',
-      borderColor: 'rgb(245, 237, 19)',
+      backgroundColor: 'rgb(245, 237, 19, .7)',
+      borderColor: 'rgb(245, 237, 19, .7)',
     },
     {
         label: 'Mood',
         data: [4, 5, 3, 2, 1, 5],
         fill: false,
-        backgroundColor: 'rgb(63, 127, 191)',
-        borderColor: 'rgb(63, 127, 191)', 
+        backgroundColor: 'rgb(63, 127, 191, .7)',
+        borderColor: 'rgb(63, 127, 191, .7)', 
     }
   ]};
 
-const options = {
-  scales: {
-    yAxes: [
-      {
-        ticks: {
-          beginAtZero: true,
-          stepSize: 1,
+  const options = {
+    scales: {
+      yAxes: [
+        {
+          ticks: {
+            beginAtZero: true,
+            precision: 0,
+          },
         },
-      },
-    ],
-  },
-};
+      ],
+    },
+  };
 
 const Insights = () => (
   <>
     <div className='header'>
-      <h1 className='title'>Line Chart</h1>
+      <h1 className='title'>Insights</h1>
     </div>
     <Line data={data} options={options} />
   </>
