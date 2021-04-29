@@ -59,6 +59,14 @@ function EntryView() {
         comment: commentUpdate
         }
         dispatch({type: 'UPDATE_ENTRY', payload: entryUpdate });
+        history.push('/');
+        //sweetAlert
+        Swal.fire({
+            icon: 'success',
+            title: 'Your changes have been saved',
+            showConfirmButton: false,
+            timer: 1500
+        })
     }
 
     
