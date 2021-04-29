@@ -53,7 +53,6 @@ function HistoryPage() {
                     )
                 })}
             </table>
-            <p>{JSON.stringify(current)}</p>
         </>
     )
 }

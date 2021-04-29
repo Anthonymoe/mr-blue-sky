@@ -28,6 +28,7 @@ function EntryView() {
 
     //removes entire entry from db onClick of the delete button
     const deleteClick = () => {
+        //sweetAlert to confirm user would like to delete entry.
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -43,6 +44,7 @@ function EntryView() {
                 'Your file has been deleted.',
                 'success'
               )
+            //sends delete call to db
             dispatch({type: 'DELETE_ENTRY', payload: entryInfo[0].id });
             console.log( 'delete click entry id:', entryInfo[0].id );
             history.push('/')
@@ -60,7 +62,7 @@ function EntryView() {
         }
         dispatch({type: 'UPDATE_ENTRY', payload: entryUpdate });
         history.push('/');
-        //sweetAlert
+        //sweetAlert to confirm changes
         Swal.fire({
             icon: 'success',
             title: 'Your changes have been saved',

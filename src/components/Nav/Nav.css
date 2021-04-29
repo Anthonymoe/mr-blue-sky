@@ -5,7 +5,7 @@
   align-items: center;
 
   margin: 0 0 30px;
-  background-color: #00acb0;
+  background-color: #9dd3e3;
   overflow: hidden;
 }
 
@@ -14,9 +14,9 @@
 }
 
 .nav-title {
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 700;
-  color: #f2f2f2;
+  color: white;
   padding-left: 10px;
   padding-bottom: 30px;
   padding-top: 10px;
@@ -41,4 +41,16 @@
 
 .navLink:hover {
   background-color: #008183;
+}
+
+.nav-sun {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    display: flex;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(233, 236, 10);
 }

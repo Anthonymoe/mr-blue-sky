@@ -29,7 +29,7 @@ function CommentPage() {
 
     //brings user to the previous page which is mood.
     let backClick = () => {
-        history.push('/mood');
+        history.push('/weather');
     }
 
     
@@ -39,7 +39,6 @@ function CommentPage() {
             <textarea onChange={handleChange} placeholder="comments" name="comments" id="" cols="50" rows="10" type="text"></textarea>
             <button onClick={backClick}>Back</button>
             <button onClick={submitEntry}>Submit</button>
-            <p>{JSON.stringify(test)}</p>
         </>
     )
 }
