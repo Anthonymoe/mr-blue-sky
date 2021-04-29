@@ -9,6 +9,7 @@ function UserPage() {
   const history = useHistory();
   let dispatch = useDispatch();
 
+  //running use history on user page to fetch history -- this will ensure I have all data necessary in store on the insights page.
   useEffect(() => {
     dispatch({type: 'FETCH_HISTORY', payload: user.id });
   }, []);
@@ -30,10 +31,7 @@ function UserPage() {
   return (
     <div className="container">
       {/* leaving user.username and user.id here for reference for now */}
-      <h2>Welcome, {user.username}</h2>
-      <p>Your ID is: {user.id}</p>
-      <p>will remove username and id before completetion</p>
-      {/* end of reference delete at end of project */}
+      {/* <h2>Welcome, {user.username}</h2> */}
       <h1>Where to?</h1>
       <button onClick={goToEntry} className="btn">New Entry</button>
       <button onClick={goToInsights} className="btn">Insights</button>

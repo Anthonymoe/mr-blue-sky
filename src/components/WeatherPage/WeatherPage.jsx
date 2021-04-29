@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
+import Swal from 'sweetalert2';
 
 function WeatherPage() {
     //renaming functions to make easier to call
@@ -27,9 +28,20 @@ function WeatherPage() {
     
     //dispatches weather to store.
     const newWeather = () => {
+        if ( weather === 0 ){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops....',
+                text: 'You need to make a selection before advancing',
+                position: 'top',
+                padding: '1.5em'
+              })
+        }
+        else {
         dispatch({ type: 'SET_WEATHER', payload: weather })
         setWeather(0);
         history.push('/comment')
+        }
     }
 
 
@@ -46,7 +58,6 @@ function WeatherPage() {
                 <button value='5'>5</button>
             </form>
             <div>
-                <p>{JSON.stringify(test)}</p>
                 <button onClick={cancel}>Back</button>
                 <button onClick={newWeather}>Next</button>
             </div>

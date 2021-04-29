@@ -1,7 +1,7 @@
 import {useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import React, { useEffect, useState } from 'react';
-
+import Swal from 'sweetalert2';
 
 
 function EntryView() {
@@ -28,9 +28,27 @@ function EntryView() {
 
     //removes entire entry from db onClick of the delete button
     const deleteClick = () => {
-        dispatch({type: 'DELETE_ENTRY', payload: entryInfo[0].id });
-        console.log( 'delete click entry id:', entryInfo[0].id );
-        history.push('/')
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+              )
+            dispatch({type: 'DELETE_ENTRY', payload: entryInfo[0].id });
+            console.log( 'delete click entry id:', entryInfo[0].id );
+            history.push('/')
+            }
+          })
+        
     }
 
     //updates entry in db 

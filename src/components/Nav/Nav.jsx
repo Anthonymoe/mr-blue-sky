@@ -20,9 +20,9 @@ function Nav() {
   return (
     <div className="nav">
       <Link to="/home">
-        <h2 className="nav-title">Prime Solo Project</h2>
+        <h2 className="nav-title">Mr. Blue Sky</h2>
       </Link>
-      <div>
+      {/* <div>
         <Link className="navLink" to={loginLinkData.path}>
           {loginLinkData.text}
         </Link>
@@ -39,7 +39,7 @@ function Nav() {
         <Link className="navLink" to="/about">
           About
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 }

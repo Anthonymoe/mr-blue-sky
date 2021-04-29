@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
+import Swal from 'sweetalert2';
 const moment = require("moment");
 
 function MoodPage() {
@@ -28,10 +29,21 @@ function MoodPage() {
     
     //dispatches mood to store.
     const newMood = () => {
+        if ( mood === 0 ){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops....',
+                text: 'You need to make a selection before advancing',
+                position: 'top',
+                padding: '1.5em'
+              })
+        }
+        else {
         dispatch({ type: 'SET_MOOD', payload: mood })
         dispatch({ type: 'SET_DATE', payload: moment().format("MM/DD/YY") })
         setMood(0);
         history.push('/weather')
+        }
     }
 
 
@@ -48,7 +60,6 @@ function MoodPage() {
                 <button value='5'>5</button>
             </form>
             <div>
-                <p>{JSON.stringify(test)}</p>
                 <button onClick={cancel}>Cancel</button>
                 <button onClick={newMood}>Next</button>
             </div>

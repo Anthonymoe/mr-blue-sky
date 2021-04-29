@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
 html,
 body,
 #react-root {
@@ -5,13 +7,20 @@ body,
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Architects Daughter', cursive;
   margin: 0px;
+  background-color: #CAE0E6 ;
+  text-align: center;
 }
 
 img {
   display: inline-block;
   max-width: 100%;
+}
+
+textarea {
+  font-family: 'Architects Daughter', cursive;
+  font-size: medium;
 }
 
 /* --------------------------------------------------------------------------------
@@ -27,16 +36,21 @@ Button
 -------------------------------------------------------------------------------- */
 
 .btn {
-  display: inline-block;
+  display: flex;
+  padding: 100px;
+  margin-bottom: 15%;
+  margin-left: auto;
+  margin-right: auto;
   padding: 10px 20px;
-  border-color: #014041;
-  border-width: 1px 1px 3px;
-  border-radius: 4px;
-  background-color: #00acb0;
-  color: #f8f8f8;
+  border-color: black;
+  border-width: 1px 1px 1px;
+  border-radius: 12px;
+  background-color: #F5F3EB;
+  color: black ;
   font-size: 1.1rem;
   outline: 0;
   cursor: pointer;
+  font-family: 'Architects Daughter', cursive;
 }
 
 .btn_sizeMin {
@@ -109,4 +123,8 @@ Form Treatment
 input {
   margin: 5px;
   margin-bottom: 10px;
+}
+
+.swal-size {
+  width: 80% !important;
 }
