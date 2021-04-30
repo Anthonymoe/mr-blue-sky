@@ -30,6 +30,10 @@ function HistoryPage() {
         history.push('/entry')
     }
 
+    const homeClick = () =>{
+        history.push('/');
+    }
+
     return(
         <>
             <table>
@@ -37,11 +41,6 @@ function HistoryPage() {
                     <th>Date</th>
                     <th>Mood</th>
                     <th>View/Edit/Delete</th>
-                </tr>
-                <tr>
-                    <td>4/22/21</td>
-                    <td>3</td>
-                    <td><button>Go!</button></td>
                 </tr>
                 {entryHistory.map(entry => {
                     return (
@@ -53,6 +52,7 @@ function HistoryPage() {
                     )
                 })}
             </table>
+            <button className="home-btn" onClick={homeClick}>Home</button>
         </>
     )
 }

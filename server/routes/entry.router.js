@@ -1,9 +1,11 @@
 const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
+const {rejectUnauthenticated} = require('../modules/authentication-middleware')
+
 
 //this route gets all entries for the current user
-router.get('/:id', (req, res) => {
+router.get('/:id', rejectUnauthenticated, (req, res) => {
   console.log('in entry get', req.params.id);
   const query = `SELECT * FROM "entry"
   WHERE "user_id" = $1
@@ -19,7 +21,7 @@ router.get('/:id', (req, res) => {
   });
 
   //this route gets the selected entry for the current user in order to display the details on the view/delete/edit page
-  router.get('/', (req, res) => {
+  router.get('/', rejectUnauthenticated, (req, res) => {
     const queryId = Number(req.query.entryId);
     console.log(queryId);
     console.log('in selectedEntry get', req.query.entryId);
@@ -38,7 +40,7 @@ router.get('/:id', (req, res) => {
 
 
 //this route adds a new entry
-router.post('/', (req, res) => {
+router.post('/', rejectUnauthenticated, (req, res) => {
   // POST route code here
   console.log('in entry.router sending:', req.body );
   //naming query to make it easier to reference
@@ -57,7 +59,7 @@ router.post('/', (req, res) => {
 });
 
 //this route deletes the selected entry
-router.delete('/:id', (req, res) => {
+router.delete('/:id', rejectUnauthenticated, (req, res) => {
   console.log('in entry delete', req.params.id);
   const query = `DELETE FROM "entry"
   WHERE "id"=$1 `;
@@ -74,7 +76,7 @@ router.delete('/:id', (req, res) => {
 
 
   //this route makes edits made to the selected entry
-  router.put('/', (req, res) => {
+  router.put('/', rejectUnauthenticated, (req, res) => {
     console.log('in entry update put route', req.body);
     const query = `UPDATE "entry"
     SET "comment" = $1

@@ -23,6 +23,7 @@ function ReviewPage() {
         history.push('/comment')
     }
     //submits entry to the db and brings the user back to the home page after complete.
+    //consider setting up a conditional to make sure that inputs exist in mood and comment. if current entry.mood != undefined. 
     let submitEntry = () => {
         dispatch({type: 'ADD_ENTRY', payload: newEntry })
         console.log('in submit Entry:', newEntry );
