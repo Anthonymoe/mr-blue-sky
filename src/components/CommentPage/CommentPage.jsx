@@ -36,7 +36,7 @@ function CommentPage() {
 
     return(
         <>
-            <textarea onChange={handleChange} placeholder="comments" name="comments" id="" cols="50" rows="10" type="text"></textarea>
+            <textarea onChange={handleChange} placeholder="comments" name="comments" id="" cols="30" rows="10" type="text"></textarea>
             <button onClick={backClick}>Back</button>
             <button onClick={submitEntry}>Submit</button>
         </>

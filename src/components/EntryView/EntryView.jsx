@@ -94,7 +94,7 @@ function EntryView() {
 
     //on the click of edit this toggles the comment to a text box with a submit and cancel button
     const displayComment = () => {
-        let display = <div><textarea onChange={updateComment} name="" id="" cols="40" rows="10">{entryInfo[0].comment}</textarea> 
+        let display = <div><textarea onChange={updateComment} name="" id="" cols="30" rows="10">{entryInfo[0].comment}</textarea> 
             <button onClick={()=>updateEntry(entryInfo[0].id)}>Submit</button> <button onClick={toggleEdit}>Cancel</button></div>;
         if (edit) {
             display = <p>{entryInfo[0].comment}</p>;
@@ -116,8 +116,8 @@ function EntryView() {
                         
                     )
             })}
-            <button className='entry-btn' onClick={toggleEdit}>Edit</button>
             <button className='entry-btn' onClick={backClick}>Back</button>
+            <button className='entry-btn' onClick={toggleEdit}>Edit</button>
             <button className='entry-btn' onClick={homeClick}>Home</button>
             <button className='entry-btn' onClick={deleteClick}>Delete Entry</button>
         </>

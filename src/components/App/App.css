@@ -22,9 +22,12 @@ p {
   font-size: x-large;
 }
 
+
 textarea {
   font-family: 'Architects Daughter', cursive;
-  font-size: medium;
+  font-size: x-large;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 /* --------------------------------------------------------------------------------
