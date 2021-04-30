@@ -23,7 +23,8 @@ function ReviewPage() {
         history.push('/comment')
     }
     //submits entry to the db and brings the user back to the home page after complete.
-    //consider setting up a conditional to make sure that inputs exist in mood and comment. if current entry.mood != undefined. 
+    //consider setting up a conditional to make sure that inputs exist in mood and comment. if currentEntry.mood != undefined. 
+    //this issue occurs when the user refreshes the page. 
     let submitEntry = () => {
         dispatch({type: 'ADD_ENTRY', payload: newEntry })
         console.log('in submit Entry:', newEntry );
@@ -33,10 +34,9 @@ function ReviewPage() {
     return(
         <>
             <h1>Review your entry</h1>
-            <p>Current mood:{currentEntry.mood}</p>
-            <p>Current weather:{currentEntry.weather}</p>
-            <p>Current comment:{currentEntry.comment}</p>
-            <p>User Id:{currentEntry.user.id}</p>
+            <p>Current mood: {currentEntry.mood}</p>
+            <p>Current weather: {currentEntry.weather}</p>
+            <p>Current comment: {currentEntry.comment}</p>
             <button onClick={backClick}>Back</button>
             <button onClick={submitEntry}>Confirm</button>
         </>

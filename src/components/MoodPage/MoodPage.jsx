@@ -2,7 +2,9 @@ import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import Swal from 'sweetalert2';
+import './MoodPage.css'
 const moment = require("moment");
+
 
 function MoodPage() {
     //renaming functions to make easier to call
@@ -53,15 +55,15 @@ function MoodPage() {
                 <h1>How are you Feeling Today?</h1>
             </div>
             <form onClick={moodChange}>
-                <button value='1'>1</button>
-                <button value='2'>2</button>
-                <button value='3'>3</button>
-                <button value='4'>4</button>
-                <button value='5'>5</button>
+                <button className='btn-1' value='1'>1</button>
+                <button className='btn-2' value='2'>2</button>
+                <button className='btn-3' value='3'>3</button>
+                <button className='btn-4' value='4'>4</button>
+                <button className='btn-5' value='5'>5</button>
             </form>
             <div>
-                <button onClick={cancel}>Cancel</button>
-                <button onClick={newMood}>Next</button>
+                <button className='cancel-btn' onClick={cancel}>Cancel</button>
+                <button className='next-btn' onClick={newMood}>Next</button>
             </div>
         </>
     )

@@ -1,0 +1,73 @@
+.btn-1 {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    padding: 10px 23px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background-color: red;
+}
+
+.btn-2 {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    padding: 10px 20px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background-color: orange;
+}
+
+.btn-3 {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    padding: 10px 20px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background-color: yellow;
+}
+
+.btn-4 {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    padding: 10px 20px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background-color: GreenYellow;
+}
+
+.btn-5 {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    padding: 10px 20px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background-color: LimeGreen;
+}
+
+.back-btn {
+    margin-left: 10px;
+    margin-top: 20px;
+    float: left;
+    font-size: 1.3rem;
+}
+
+.next-btn {
+    margin-right: 10px;
+    margin-top: 20px;
+    float: right;
+    font-size: 1.3rem;
+}

@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
+import './WeatherPage.css'
 import Swal from 'sweetalert2';
 
 function WeatherPage() {
@@ -51,15 +52,15 @@ function WeatherPage() {
                 <h1>How is the weather?</h1>
             </div>
             <form onClick={weatherChange}>
-                <button value='1'>1</button>
-                <button value='2'>2</button>
-                <button value='3'>3</button>
-                <button value='4'>4</button>
-                <button value='5'>5</button>
+                <button className='btn-1' value='1'>1</button>
+                <button className='btn-2' value='2'>2</button>
+                <button className='btn-3' value='3'>3</button>
+                <button className='btn-4' value='4'>4</button>
+                <button className='btn-5' value='5'>5</button>
             </form>
             <div>
-                <button onClick={cancel}>Back</button>
-                <button onClick={newWeather}>Next</button>
+                <button className='back-btn' onClick={cancel}>Back</button>
+                <button className='next-btn' onClick={newWeather}>Next</button>
             </div>
         </>
     )
