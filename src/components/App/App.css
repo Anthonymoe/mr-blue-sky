@@ -68,6 +68,7 @@ Button
 .btn_sizeSm {
   padding: 10px 15px;
   font-size: 0.8rem;
+  margin-top: 30%;
 }
 
 .btn_sizeFull {
