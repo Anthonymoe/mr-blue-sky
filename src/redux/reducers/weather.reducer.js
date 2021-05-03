@@ -1,5 +1,4 @@
 const weatherReducer = (state = 0, action) => {
-    console.log('in weather reducer');
     switch (action.type) {
       case 'SET_WEATHER':
         return action.payload;

@@ -1,5 +1,4 @@
 const moodReducer = (state = 0, action) => {
-    console.log('in mood reducer');
     switch (action.type) {
       case 'SET_MOOD':
         return action.payload;

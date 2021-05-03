@@ -14,14 +14,17 @@ function UserPage() {
     dispatch({type: 'FETCH_HISTORY', payload: user.id });
   }, []);
 
+  //sends user to first step in new entry(MoodPage)
   const goToEntry = () => {
     history.push('/mood')
   }
 
+  //sends user to HistoryPage can view a table of all previous entries
   const goToHistory = () => {
     history.push('/history')
   }
 
+  //sends user to Insights to view chart with mood and weather data
   const goToInsights = () => {
     history.push('/insights')
   }
@@ -30,8 +33,6 @@ function UserPage() {
 
   return (
     <div className="container">
-      {/* leaving user.username and user.id here for reference for now */}
-      {/* <h2>Welcome, {user.username}</h2> */}
       <h1>Where to?</h1>
       <button onClick={goToEntry} className="btn">New Entry</button>
       <button onClick={goToInsights} className="btn">Insights</button>

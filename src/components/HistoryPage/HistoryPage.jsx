@@ -30,6 +30,7 @@ function HistoryPage() {
         history.push('/entry')
     }
 
+    //sends user back to home(userPage)
     const homeClick = () =>{
         history.push('/');
     }

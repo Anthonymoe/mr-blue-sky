@@ -26,8 +26,6 @@ import HistoryPage from '../HistoryPage/HistoryPage';
 import EntryView from '../EntryView/EntryView';
 import WeatherPage from '../WeatherPage/WeatherPage';
 import Insights from '../Insights/Insights';
-
-
 import './App.css';
 
 
@@ -109,14 +107,12 @@ function App() {
             <Insights />
           </ProtectedRoute> 
 
-
           <ProtectedRoute
             exact
             path="/entry"
           >
             <EntryView/>
           </ProtectedRoute> 
-
 
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage

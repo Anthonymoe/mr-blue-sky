@@ -25,6 +25,7 @@ function Nav() {
         </div>    
         <div className="nav-sun"></div>
       </Link>
+      {/* Removed old nav bar but can put it back in by uncommenting this code */}
       {/* <div>
         <Link className="navLink" to={loginLinkData.path}>
           {loginLinkData.text}

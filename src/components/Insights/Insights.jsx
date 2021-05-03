@@ -14,12 +14,14 @@ function Insights() {
     const date = [];
     
     //loops through userInfo array to capture necessary data
+    //will only show last 7 entries ---> ideally showing the last week of data
     for (let i = 0; i < userInfo.length && i < 7 ; i++){
         weather.push(userInfo[i].weather);
         mood.push(userInfo[i].mood);
         date.push(userInfo[i].date);
     }
     
+    //data to be rendered to the chart
     const data = {
         labels: date ,
         datasets: [
