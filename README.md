@@ -14,7 +14,7 @@ Mr. Blue Sky can be used as a basic journaling application, however what sets it
 
 https://vast-mountain-51544.herokuapp.com/?#/user
 
-for best results inspect in google chrome using the iphoneX setting. 
+for best results inspect in google chrome using the iphoneX setting. g
 
 Tech used: 
 * React
