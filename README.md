@@ -10,6 +10,12 @@ I created a mobile first application called Mr. Blue Sky. This application will 
 
 Mr. Blue Sky can be used as a basic journaling application, however what sets it apart is that it allows the user to view correlation between mood and weather. 
 
+## Try me
+
+https://vast-mountain-51544.herokuapp.com/?#/user
+
+for best results inspect in google chrome using the iphoneX setting. 
+
 Tech used: 
 * React
 * Redux
