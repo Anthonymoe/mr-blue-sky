@@ -12,9 +12,9 @@ Mr. Blue Sky can be used as a basic journaling application, however what sets it
 
 ## Try me
 
-https://vast-mountain-51544.herokuapp.com/?#/user
+https://mr-blue-sky.herokuapp.com/#/login 
 
-for best results inspect in google chrome using the iphoneX setting. g
+for best results inspect in google chrome using the iphoneX setting. 
 
 Tech used: 
 * React
